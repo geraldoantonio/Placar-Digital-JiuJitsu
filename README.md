@@ -2,6 +2,8 @@
 
 Simples programa desenvolvido para marcar tempo e pontuação de luta, na modalidade JiuJitsu.
 
+![app](https://github.com/geraldoantonio/Placar-Digital-JiuJitsu/blob/master/src/images/page.png?raw=true)
+
 ## Funções
 
 * Contagem de pontos e soma total;
