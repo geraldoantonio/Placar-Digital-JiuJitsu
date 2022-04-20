@@ -1,232 +1,209 @@
+<!DOCTYPE html>
+<html>
 
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<head>
+  <!--Import Google Icon Font-->
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
-      <link type="text/css" rel="stylesheet" href="css/custom.css" />
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="src/css/materialize.min.css">
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Placar JiuJitsu">
+  <meta name="keywords" content="jiujitsu,jiu-jitsu,placar,digital,campeonato,CBJJ,CBJJE">
+  <meta name="author" content="Geraldo Júnior">
+  <link type="text/css" rel="stylesheet" href="src/css/custom.css" />
 
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+  <title>PLACAR DIGITAL JIU-JITSU</title>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="text/javascript">
+    // função para desabilitar a tecla F5.
+    window.onkeydown = function (e) {
+      if (e.keyCode === 116) {
+        e.keyCode = 0;
+        e.returnValue = false;
+        return false;
+      }
+    }
+  </script>
+</head>
 
-      <meta name="description" content="Placar JiuJitsu">
-      <meta name="keywords" content="jiujitsu,jiu-jitsu,placar,digital,campeonato,CBJJ,CBJJE">
-      <meta name="author" content="Geraldo Júnior">
-
-
-
-      <title>PLACAR DIGITAL JIU-JITSU</title>
-
-
-        <script type="text/javascript">
-
-        // função para desabilitar a tecla F5.
-        window.onkeydown = function (e) {
-          if (e.keyCode === 116) {
-            e.keyCode = 0;
-            e.returnValue = false;
-            return false;
-          }
-        }
-
-</script>
-    </head>
-
-    <body>
-    <div class="row indigo lighten-5">
-      <div class="col s8 ">
-          <div class="row" >  
-            <div class="input-field col s12">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="atleta-1" type="text" class="validate">
-              <label for="atleta-1">Atleta 1</label>
-            </div>
+<body>
+  <main>
+    <div class="players-content">
+      <section>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="atleta-1" type="text" class="validate" placeholder="ATLETA 1">
           </div>
-          <div class="row center">
-              <div class="col s3">Montada | Pegada nas Costa</div>
-              <div class="col s3">Passagem de Guarda</div>
-              <div class="col s3">Queda | Raspagem | Joelho na Barriga</div>
-              <div class="col s3">Vantagem</div>
-          </div>
-          <div class="row center pontuacao-group">
-              <div id="pt1-a" class="col s3 pontuacao">0</div>
-              <div id="pt1-b" class="col s3 pontuacao">0</div>
-              <div id="pt1-c" class="col s3 pontuacao">0</div>
-              <div  class="col s3 ">
-                  <div id="pt1-d" class="pontuacao-2 left">0 </div>
+        </div>
 
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-1)"><i class="material-icons">remove</i></a>
-
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 1)"><i class="material-icons">add</i></a>
-                <div class="punicao-title">Punição</div>
-
-              </div>
-          </div>
-          <div class="row center">
-              <div class="col s3 ">  
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-4)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">4</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 4)"><i class="material-icons">add</i></a>
-              </div>
-              <div class="col s3 ">
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-3)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">3</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 3)"><i class="material-icons">add</i></a>
-              </div>
-              <div class="col s3 ">
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-2)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">2</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 2)"><i class="material-icons">add</i></a>
-              </div>
-
-              <div  class="col s3 ">
-                  <div id="pt1-e" class="pontuacao-2 left red-text">0 </div>
-
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-11)"><i class="material-icons">remove</i></a>
-
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 11)"><i class="material-icons">add</i></a>
-
-              </div>
+        <div class="row center">
+          <div class="col s3">
+            <div class="card-title"> Montada | Pegada nas Costa</div>
+            <div id="pt1-a" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-4)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">4</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 4)"><i
+                class="material-icons">add</i></a>
 
           </div>
 
+          <div class="col s3">
+            <div class="card-title"> Passagem de Guarda</div>
+            <div id="pt1-b" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-3)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">3</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 3)"><i
+                class="material-icons">add</i></a>
 
-
-
-
-          <div class="row">  
-            <div class="input-field col s12">
-              <i class="material-icons prefix">account_circle</i>
-              <input id="atleta-2" type="text" class="validate">
-              <label for="atleta-2">Atleta 2</label>
-            </div>
-          </div>
-          <div class="row center">
-              <div class="col s3">Montada | Pegada nas Costa</div>
-              <div class="col s3">Passagem de Guarda</div>
-              <div class="col s3">Queda | Raspagem | Joelho na Barriga</div>
-              <div class="col s3">Vantagem</div>
-          </div>
-          <div class="row center pontuacao-group">
-              <div id="pt2-a" class="col s3 pontuacao">0</div>
-              <div id="pt2-b" class="col s3 pontuacao">0</div>
-              <div id="pt2-c" class="col s3 pontuacao">0</div>
-              <div  class="col s3 ">
-                  <div id="pt2-d" class="pontuacao-2 left">0 </div>
-
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-1)"><i class="material-icons">remove</i></a>
-
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 1)"><i class="material-icons">add</i></a>
-                <div class="punicao-title">Punição</div>
-
-              </div>
-          </div>
-          <div class="row center">
-              <div class="col s3 ">  
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-4)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">4</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 4)" onclick="pontos('pt1-a', 3)"><i class="material-icons">add</i></a>
-              </div>
-              <div class="col s3 ">
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-3)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">3</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 3)"><i class="material-icons">add</i></a>
-              </div>
-              <div class="col s3 ">
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-2)"><i class="material-icons">remove</i></a>
-                <span class="label-pontos">2</span>
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 2)"><i class="material-icons">add</i></a>
-              </div>
-
-
-              <div  class="col s3 ">
-                  <div id="pt2-e" class="pontuacao-2 left red-text">0 </div>
-
-                <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-11)"><i class="material-icons">remove</i></a>
-
-                <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 11)"><i class="material-icons">add</i></a>
-
-              </div>
           </div>
 
-
-      </div>
-
-
-
-
-
-
-      <div class="col s4 card-panel indigo accent-2">
-          <div class="row center">
-              <span id="tp1" class="total-pontos ">0</span>
+          <div class="col s3">
+            <div class=" card-title"> Queda | Raspagem | Joelho na Barriga</div>
+            <div id="pt1-c" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-2)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">2</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 2)"><i
+                class="material-icons">add</i></a>
           </div>
-          <div class="row card-panel black blue-text text-darken-2">
+
+          <div class="col s3">
             <div class="row">
-                <div class="col s6 center">
-                  Tempo Restante
-                </div>
-                <div class="col s4 ">  
-                    <a id="controle_button" class="waves-effect waves-light btn hide" onclick="start()">Iniciar</a>
-                </div>
-                <div class="col s2 "> 
-                    <div id="tempo_select" class="fixed-action-btn horizontal "  >
-                      <a class="btn-floating btn-large orange">
-                        <i class="large material-icons">timer</i>
-                      </a>
-                      <ul>
-                        <li><a class="btn-floating yellow darken-1" onclick="tempo_luta(3)">3min </a></li>
-                        <li><a class="btn-floating red darken-1" onclick="tempo_luta(4)">4min</a></li>
-                        <li><a class="btn-floating blue darken-1" onclick="tempo_luta(5)">5min</a></li>
-                        <li><a class="btn-floating pink darken-1" onclick="tempo_luta(6)">6min</a></li>
-                        <li><a class="btn-floating green darken-1" onclick="tempo_luta(7)">7min</a></li>
-                        <li><a class="btn-floating orange darken-1" onclick="tempo_luta(8)">8min</a></li>
-                        <li><a class="btn-floating black" onclick="tempo_luta(10)">10min</a></li>
-                      </ul>
-                    </div>
-        
-                </div>
-            </div>
-
-            <div class="row center">
-              <div class="col s12">
-                  <div id="cronometro">
-                    <div id="tempo" class="white-text">00:00 </div>
-                    <div id="controle" class="hide">stop</div>
-                  </div>          
-              </div>
+              <div>Vantagem</div>
+              <div id="pt1-d" class="pontuacao-2">0</div>
+              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-1)"><i
+                  class="material-icons">remove</i></a>
+              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 1)"><i
+                  class="material-icons">add</i></a>
             </div>
 
             <div class="row">
-                <div class="col s6 center">
-                  Development by Geraldo Júnior <a href="https://github.com/geraldoantonio/Placar-Digital-JiuJitsu" target="_blank">Site</a>
-                </div>
-                <div class="col s6 right">
-                    <a class="waves-effect waves-light btn" onclick="reiniciar()">Reiniciar</a>
-                </div>
+              <div>Punição</div>
+              <div id="pt1-e" class="pontuacao-2">0</div>
+              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-11)"><i
+                  class="material-icons">remove</i></a>
+              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 11)"><i
+                  class="material-icons">add</i></a>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="atleta-2" type="text" class="validate" placeholder="Atleta 2">
+          </div>
+        </div>
+
+        <div class="row center">
+          <div class="col s3">
+            <div class="card-title">Montada | Pegada nas Costa</div>
+            <div id="pt2-a" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-4)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">4</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 4)"
+              onclick="pontos('pt1-a', 3)"><i class="material-icons">add</i></a>
+          </div>
+
+          <div class="col s3">
+            <div class=" card-title">Passagem de Guarda</div>
+            <div id="pt2-b" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-3)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">3</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 3)"><i
+                class="material-icons">add</i></a>
+          </div>
+
+          <div class="col s3">
+            <div class="card-title">Queda | Raspagem | Joelho na Barriga</div>
+            <div id="pt2-c" class="pontuacao">0</div>
+            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-2)"><i
+                class="material-icons">remove</i></a>
+            <span class="label-pontos">2</span>
+            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 2)"><i
+                class="material-icons">add</i></a>
+          </div>
+
+          <div class="col s3">
+            <div class="row">
+              <div >Vantagem</div>
+              <div id="pt2-d" class="pontuacao-2">0 </div>
+              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-1)"><i
+                  class="material-icons">remove</i></a>
+              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 1)"><i
+                  class="material-icons">add</i></a>
             </div>
 
+            <div class="row">
+              <div >Punição</div>
+              <div id="pt2-e" class="pontuacao-2">0 </div>
+              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-11)"><i
+                  class="material-icons">remove</i></a>
+              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 11)"><i
+                  class="material-icons">add</i></a>
+            </div>
           </div>
-          <div class="row center">
-            <span id="tp2" class="total-pontos white-text">0</span>
-          </div>
-      </div>
+        </div>
+      </section>
     </div>
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <!-- Compiled and minified JavaScript -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-      
-      <script src="js/placar-jiujitsu.js"></script>
-      <script type="text/javascript">
-           requestFullScreen();
-      </script>
-          
-    </body>
-  </html>
-        
+    <div class="sidebar">
+      <div id="tp1" class="total-pontos">0</div>
+
+      <div class="timer-content row">
+        <div id="cronometro" class="col s12 center ">
+          <div id="tempo">00:00 </div>
+          <div id="controle" class="hide">stop</div>
+        </div>
+
+        <div class="col s6 center ">
+          <a id="controle_button" class="waves-effect waves-light btn hide" onclick="start()">Iniciar</a>
+        </div>
+
+        <div class="col s6 center">
+          <a class="waves-effect waves-light btn" onclick="reiniciar()">Reiniciar</a>
+        </div>
+      </div>
+
+      <div id="tp2" class="total-pontos">0</div>
+    </div>
+
+    <div class="col s2 ">
+      <div id="tempo_select" class="fixed-action-btn horizontal ">
+        <a class="btn-floating btn-large orange" title="Tempo de luta">
+          <i class="large material-icons">timer</i>
+        </a>
+        <ul>
+          <li><a class="btn-floating center yellow darken-1" onclick="tempo_luta(3)" title="3 minutos">3</a></li>
+          <li><a class="btn-floating center red darken-1" onclick="tempo_luta(4)" title="4 minutos">4</a></li>
+          <li><a class="btn-floating center blue darken-1" onclick="tempo_luta(5)" title="5 minutos">5</a></li>
+          <li><a class="btn-floating center pink darken-1" onclick="tempo_luta(6)" title="6 minutos">6</a></li>
+          <li><a class="btn-floating center green darken-1" onclick="tempo_luta(7)" title="7 minutos">7</a></li>
+          <li><a class="btn-floating center orange darken-1" onclick="tempo_luta(8)" title="8 minutos">8</a></li>
+          <li><a class="btn-floating center black" onclick="tempo_luta(10)" title="10 minutos">10</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </main>
+
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="src/js/jquery-2.1.1.min.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="src/js/materialize.min.js"></script>
+
+  <script src="src/js/placar-jiujitsu.js"></script>
+  <script type="text/javascript">
+    requestFullScreen();
+  </script>
+</body>
+
+</html>

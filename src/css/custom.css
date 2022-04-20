@@ -1,0 +1,150 @@
+:root {
+  --bg-color: rgba(202, 199, 199, 0.959);
+  --text-color: rgb(0, 0, 0);
+  --player-1-bg-color: rgb(11, 5, 99);
+  --player-1-text-color: rgb(236, 223, 223);
+  --player-2-bg-color: rgb(0, 0, 0);
+  --player-2-text-color: rgb(255, 255, 255);
+  --font-size: 1rem;
+  --timer-bg-color: rgba(228, 240, 12, 0.973);
+  --timer-text-color: rgb(0, 0, 0);
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/material-icons.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+*{
+  box-sizing: border-box;
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: bolder;
+  font-size: var(--font-size);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center; /*centers items on the line (the x-axis by default)*/
+  align-items: center; /*centers items on the cross-axis (y by default)*/
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+
+.players-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0.7;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 0.3;
+  flex-wrap: wrap;
+  color: var(--text-color);
+  margin: 0 0.5rem;
+}
+
+.card-title{
+  font-size: 1rem;
+  min-height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.timer-content{
+  font-size: 1rem;
+  background-color: var(--timer-bg-color);
+  color: var(--timer-text-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  
+}
+
+#tempo {
+  font-size: 8rem;
+}
+
+.pontuacao {
+  font-size: 8em;
+}
+
+.pontuacao-2 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+.total-pontos {
+  font-size: 18rem;
+  line-height: 100px;
+}
+
+#tp1 {
+  color: var(--player-1-bg-color);
+}
+
+#tp2 {
+  color: var(--player-2-bg-color);
+}
+
+.label-pontos {
+  font-size: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.input-field input[type=text] {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem;
+
+}
+
+.players-content>section:first-child {
+  background-color: var(--player-1-bg-color);
+  color: var(--player-1-text-color);
+}
+
+.players-content>section:last-child {
+  background-color: var(--player-2-bg-color);
+  color: var(--player-2-text-color);
+}

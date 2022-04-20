@@ -19,3 +19,7 @@ WebBrowser(Navegador de Internet),recomendados:
 ## Authors
 
 * **Geraldo Júnior** - (https://github.com/geraldoantonio)
+
+## Contribua com o projeto
+
+- CHAVE PIX - bimbo_junior001@hotmail.com
