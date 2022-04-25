@@ -1,0 +1,37 @@
+/* Default theme */
+
+:root {
+  --p1-primary-color: #1163c2;
+  --p1-secondary-color: #e9f1f7;
+  --p2-primary-color: #c70505;
+  --p2-secondary-color: #e9f1f7;
+  --timer-bg-color: #0e0d0d;
+  --timer-text-color: #e9f1f7;
+  --bg-color: #000000;
+  --sidebar-bg-color: #e9f1f7;
+}
+
+/* 
+:root {
+  --p1-primary-color: #044389;
+  --p1-secondary-color: #e9f1f7;
+  --p2-primary-color: #5995ed;
+  --p2-secondary-color: #e9f1f7;
+  --timer-bg-color: #ffad05;
+  --timer-text-color: #e9f1f7;
+  --bg-color: #7cafc4;
+  --sidebar-bg-color: #e9f1f7;
+} */
+
+/* Blue and orange */
+/* 
+:root {
+  --p1-primary-color: #044389;
+  --p1-secondary-color: #ffffff;
+  --p2-primary-color: #7cafc4;
+  --p2-secondary-color: #000;
+  --timer-bg-color: #ffad05;
+  --timer-text-color: #fff;
+  --bg-color: rgb(0, 0, 0);
+  --sidebar-bg-color: rgb(245, 238, 238);
+} */
