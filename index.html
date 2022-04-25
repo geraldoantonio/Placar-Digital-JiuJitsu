@@ -1,209 +1,190 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <!--Import Google Icon Font-->
-  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="src/css/materialize.min.css">
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Placar JiuJitsu">
-  <meta name="keywords" content="jiujitsu,jiu-jitsu,placar,digital,campeonato,CBJJ,CBJJE">
-  <meta name="author" content="Geraldo Júnior">
-  <link type="text/css" rel="stylesheet" href="src/css/custom.css" />
-
-  <title>PLACAR DIGITAL JIU-JITSU</title>
-
-  <script type="text/javascript">
-    // função para desabilitar a tecla F5.
-    window.onkeydown = function (e) {
-      if (e.keyCode === 116) {
-        e.keyCode = 0;
-        e.returnValue = false;
-        return false;
-      }
-    }
-  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JiuJitsu - Score Board</title>
+  <meta name="keywords" content="jiujitsu, jiu-jitsu, placar, eletrônico, digital, campeonato, CBJJ, CBJJE, luta, arte, macial">
+  <link rel="stylesheet" href="./src/css/themes.css">
+  <link rel="stylesheet" href="./src/css/custom.css">
+  <link rel="stylesheet" href="./src/css/modal.css">
 </head>
 
 <body>
   <main>
-    <div class="players-content">
-      <section>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="atleta-1" type="text" class="validate" placeholder="ATLETA 1">
-          </div>
-        </div>
-
-        <div class="row center">
-          <div class="col s3">
-            <div class="card-title"> Montada | Pegada nas Costa</div>
-            <div id="pt1-a" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-4)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">4</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 4)"><i
-                class="material-icons">add</i></a>
-
-          </div>
-
-          <div class="col s3">
-            <div class="card-title"> Passagem de Guarda</div>
-            <div id="pt1-b" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-3)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">3</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 3)"><i
-                class="material-icons">add</i></a>
-
-          </div>
-
-          <div class="col s3">
-            <div class=" card-title"> Queda | Raspagem | Joelho na Barriga</div>
-            <div id="pt1-c" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-2)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">2</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 2)"><i
-                class="material-icons">add</i></a>
-          </div>
-
-          <div class="col s3">
-            <div class="row">
-              <div>Vantagem</div>
-              <div id="pt1-d" class="pontuacao-2">0</div>
-              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-1)"><i
-                  class="material-icons">remove</i></a>
-              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 1)"><i
-                  class="material-icons">add</i></a>
-            </div>
-
-            <div class="row">
-              <div>Punição</div>
-              <div id="pt1-e" class="pontuacao-2">0</div>
-              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(1,-11)"><i
-                  class="material-icons">remove</i></a>
-              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(1, 11)"><i
-                  class="material-icons">add</i></a>
+    <section>
+      <div class="player1">
+        <div class="atleta-name" data-player-name="player1">Atleta 1</div>
+        <div class="points-content">
+          <div class="point-content">
+            <div class="point-title">Montada <br> Pegada nas Costa</div>
+            <div class="point-value" data-point-mounted="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.mountedDecrement()">-</a>
+              <div class="point-count">4</div>
+              <a class="btn" onclick="player1.mountedIncrement()">+</a>
             </div>
           </div>
-        </div>
 
-      </section>
-
-      <section>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="atleta-2" type="text" class="validate" placeholder="Atleta 2">
-          </div>
-        </div>
-
-        <div class="row center">
-          <div class="col s3">
-            <div class="card-title">Montada | Pegada nas Costa</div>
-            <div id="pt2-a" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-4)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">4</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 4)"
-              onclick="pontos('pt1-a', 3)"><i class="material-icons">add</i></a>
-          </div>
-
-          <div class="col s3">
-            <div class=" card-title">Passagem de Guarda</div>
-            <div id="pt2-b" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-3)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">3</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 3)"><i
-                class="material-icons">add</i></a>
-          </div>
-
-          <div class="col s3">
-            <div class="card-title">Queda | Raspagem | Joelho na Barriga</div>
-            <div id="pt2-c" class="pontuacao">0</div>
-            <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-2)"><i
-                class="material-icons">remove</i></a>
-            <span class="label-pontos">2</span>
-            <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 2)"><i
-                class="material-icons">add</i></a>
-          </div>
-
-          <div class="col s3">
-            <div class="row">
-              <div >Vantagem</div>
-              <div id="pt2-d" class="pontuacao-2">0 </div>
-              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-1)"><i
-                  class="material-icons">remove</i></a>
-              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 1)"><i
-                  class="material-icons">add</i></a>
-            </div>
-
-            <div class="row">
-              <div >Punição</div>
-              <div id="pt2-e" class="pontuacao-2">0 </div>
-              <a class="btn-floating btn waves-effect waves-light red" onclick="pontos(2,-11)"><i
-                  class="material-icons">remove</i></a>
-              <a class="btn-floating btn waves-effect waves-light blue" onclick="pontos(2, 11)"><i
-                  class="material-icons">add</i></a>
+          <div class="point-content">
+            <div class="point-title">Passagem de Guarda</div>
+            <div class="point-value" data-point-guard="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.guardDecrement()">-</a>
+              <div class="point-count">3</div>
+              <a class="btn" onclick="player1.guardIncrement()">+</a>
             </div>
           </div>
-        </div>
-      </section>
-    </div>
 
-    <div class="sidebar">
-      <div id="tp1" class="total-pontos">0</div>
+          <div class="point-content">
+            <div class="point-title">Queda <br> Raspagem <br> Joelho na Barriga</div>
+            <div class="point-value" data-point-overthrow="player1">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player1.overthrowDecrement()">-</a>
+              <div class="point-count">2</div>
+              <a class="btn" onclick="player1.overthrowIncrement()">+</a>
+            </div>
+          </div>
 
-      <div class="timer-content row">
-        <div id="cronometro" class="col s12 center ">
-          <div id="tempo">00:00 </div>
-          <div id="controle" class="hide">stop</div>
-        </div>
+          <div class="two-point-content">
 
-        <div class="col s6 center ">
-          <a id="controle_button" class="waves-effect waves-light btn hide" onclick="start()">Iniciar</a>
-        </div>
+            <div class="point-content">
+              <div class="point-title">Vantagem</div>
+              <div class="point-value" data-point-advantage="player1">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player1.advantageDecrement()">-</a>
+                <a class="btn" onclick="player1.advantageIncrement()">+</a>
+              </div>
+            </div>
 
-        <div class="col s6 center">
-          <a class="waves-effect waves-light btn" onclick="reiniciar()">Reiniciar</a>
+
+            <div class="point-content">
+              <div class="point-title">Punição</div>
+              <div class="point-value" data-point-punishment="player1">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player1.punishmentDecrement()">-</a>
+                <a class="btn" onclick="player1.punishmentIncrement()">+</a>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
 
-      <div id="tp2" class="total-pontos">0</div>
-    </div>
+      <div class="player2">
+        <div class="atleta-name" data-player-name="player2">Atleta 2</div>
+        <div class="points-content">
+          <div class="point-content">
+            <div class="point-title">Montada <br> Pegada nas Costa</div>
+            <div class="point-value" data-point-mounted="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.mountedDecrement()">-</a>
+              <div class="point-count">4</div>
+              <a class="btn" onclick="player2.mountedIncrement()">+</a>
+            </div>
+          </div>
 
-    <div class="col s2 ">
-      <div id="tempo_select" class="fixed-action-btn horizontal ">
-        <a class="btn-floating btn-large orange" title="Tempo de luta">
-          <i class="large material-icons">timer</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating center yellow darken-1" onclick="tempo_luta(3)" title="3 minutos">3</a></li>
-          <li><a class="btn-floating center red darken-1" onclick="tempo_luta(4)" title="4 minutos">4</a></li>
-          <li><a class="btn-floating center blue darken-1" onclick="tempo_luta(5)" title="5 minutos">5</a></li>
-          <li><a class="btn-floating center pink darken-1" onclick="tempo_luta(6)" title="6 minutos">6</a></li>
-          <li><a class="btn-floating center green darken-1" onclick="tempo_luta(7)" title="7 minutos">7</a></li>
-          <li><a class="btn-floating center orange darken-1" onclick="tempo_luta(8)" title="8 minutos">8</a></li>
-          <li><a class="btn-floating center black" onclick="tempo_luta(10)" title="10 minutos">10</a></li>
-        </ul>
+          <div class="point-content">
+            <div class="point-title">Passagem de Guarda</div>
+            <div class="point-value" data-point-guard="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.guardDecrement()">-</a>
+              <div class="point-count">3</div>
+              <a class="btn" onclick="player2.guardIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="point-content">
+            <div class="point-title">Queda <br> Raspagem <br> Joelho na Barriga</div>
+            <div class="point-value" data-point-overthrow="player2">0</div>
+            <div class="point-controls">
+              <a class="btn" onclick="player2.overthrowDecrement()">-</a>
+              <div class="point-count">2</div>
+              <a class="btn" onclick="player2.overthrowIncrement()">+</a>
+            </div>
+          </div>
+
+          <div class="two-point-content">
+
+            <div class="point-content">
+              <div class="point-title">Vantagem</div>
+              <div class="point-value" data-point-advantage="player2">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player2.advantageDecrement()">-</a>
+                <a class="btn" onclick="player2.advantageIncrement()">+</a>
+              </div>
+            </div>
+
+
+            <div class="point-content">
+              <div class="point-title">Punição</div>
+              <div class="point-value" data-point-punishment="player2">0</div>
+              <div class="point-controls">
+                <a class="btn" onclick="player2.punishmentDecrement()">-</a>
+                <a class="btn" onclick="player2.punishmentIncrement()">+</a>
+              </div>
+            </div>
+
+          </div>
+        </div>
       </div>
 
-    </div>
+    </section>
+
+    <sidebar>
+      <div class="total-points player1" data-point-total="player1">0</div>
+      <div class="timer-content">
+        <div class="timer-display" data-show-timer>00:00</div>
+        <div class="timer-controls">
+          <a class="btn" data-timer-start>Iniciar</a>
+          <a class="btn" data-game-reset>Reiniciar</a>
+          <a class="config" id="myBtn" title="Configurar" data-config-content>
+            <img src="./src/images/config.png" alt="config">
+          </a>
+        </div>
+      </div>
+      <div class="total-points player2" data-point-total="player2">0</div>
+    </sidebar>
+
   </main>
 
-  <!--Import jQuery before materialize.js-->
-  <script type="text/javascript" src="src/js/jquery-2.1.1.min.js"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="src/js/materialize.min.js"></script>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h1> Configurar Luta</h1>
+    <form class="form-submit">
+      <div class="form-input"> 
+        <label for="player1">Atleta1: </label>
+        <input type="text" name="player1" id="player1" placeholder="Nome do atleta" required autocomplete="off">
+      </div>
 
-  <script src="src/js/placar-jiujitsu.js"></script>
-  <script type="text/javascript">
-    requestFullScreen();
-  </script>
+      <div class="form-input"> 
+        <label for="player2">Atleta2: </label>
+        <input type="text" name="player2" id="player2" placeholder="Nome do atleta" required autocomplete="off">
+      </div>
+
+      <div class="form-input">
+        <label for="timer">Tempo: <span></span></label>
+        <input type="range" id="timer" name="timer" min="0" max="10">
+      </div>
+
+      <input type="submit" class="btn" value="Configurar">
+    </form>
+  </div>
+
+  <div class="modal-footer">
+    <span>
+      Developed by <a href="https://about.me/geraldo.junior" target="_blank"> Geraldo Júnior</a>
+    </span>
+  </div>
+</div>
+
+  <script type="module" src="src/js/game.js"></script>
+  <script src="src/js/modal.js"></script>
+  <script src="src/js/form-submit.js" ></script>
+  <script src="src/js/refresh-page.js"></script>
 </body>
 
 </html>
