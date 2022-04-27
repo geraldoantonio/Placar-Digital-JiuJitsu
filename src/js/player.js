@@ -80,5 +80,3 @@ function Player(dataKey, name) {
     document.querySelector(`[data-player-name="${this.dataKey}"]`).innerHTML = this.name;
   }
 }
-
-export default Player;
