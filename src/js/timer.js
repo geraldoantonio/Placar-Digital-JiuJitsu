@@ -53,5 +53,3 @@ function Timer(minute = 0, renderElementSelector = '[data-show-timer]') {
     if (element) { element.innerHTML = this.timer_format() }
   }
 }
-
-export default Timer;
