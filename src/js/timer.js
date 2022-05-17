@@ -1,4 +1,4 @@
-function Timer(minute = 0, renderElementSelector = '[data-show-timer]') {
+function Timer(minute = 0, renderElementSelector = '[data-show-timer]', countdownSoundSelector = '[data-countdown-sound]') {
   this.minute = minute;
   this.started = false;
 
@@ -25,12 +25,15 @@ function Timer(minute = 0, renderElementSelector = '[data-show-timer]') {
         clearInterval(this.interval);
       }
 
+      this.countSoundPlayer(this.timeInSeconds() <= 4)
+
       this.render();
     }, 1000);
   }
 
   this.stop = () => {
     this.started = false;
+    this.countSoundPlayer(false)
 
     clearInterval(this.interval);
   }
@@ -51,5 +54,16 @@ function Timer(minute = 0, renderElementSelector = '[data-show-timer]') {
     const element = document.querySelector(renderElementSelector)
 
     if (element) { element.innerHTML = this.timer_format() }
+  }
+
+  this.countSoundPlayer = (play = true) => {
+    const audioPlayer = document.querySelector(countdownSoundSelector);
+
+    if (play) {
+      audioPlayer.paused && audioPlayer.play();
+    } else {
+      audioPlayer.pause();
+      audioPlayer.currentTime = 0;
+    }
   }
 }
