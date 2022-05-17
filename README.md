@@ -9,14 +9,15 @@ Simples programa desenvolvido para marcar tempo e pontuação de luta, na modali
 * Contagem de pontos e soma total;
 * Definição do tempo de luta;
 * Contagem regressiva do tempo de luta;
-* Pausar tempo.
+* Pausar tempo;
+* Audio com alerta de encerramento do tempo;
 
 ### Requisitos
 
 WebBrowser(Navegador de Internet),recomendados:
 
-* Google Chrome
-* Mozilla Firefoz
+* Google Chrome - (https://www.google.com/chrome)
+* Mozilla Firefoz - (https://www.mozilla.org/pt-BR/firefox/new)
 
 ## Authors
 
@@ -24,4 +25,5 @@ WebBrowser(Navegador de Internet),recomendados:
 
 ## Contribua com o projeto
 
-- CHAVE PIX - bimbo_junior001@hotmail.com
+- CHAVE PIX - d780fcfa-6f5d-49c4-9a8c-9422763bf75d
+- Banco Brasil - Favorecido Geraldo A S Junior
